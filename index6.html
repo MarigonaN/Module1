@@ -1,0 +1,242 @@
+<html>
+  <head>
+      <title>Title</title>
+    <script>
+     
+​
+     
+
+​
+      /* EXERCISE 11
+            Use HTML5 tags to divide sections, headers etc 
+            */
+    </script>
+​
+    <!-- <style>
+      .myHeading {
+        color: red;
+      } -->
+    </style>
+  </head>
+  <body>
+    <button onclick="myFunction1()">Alert</button>
+     
+    <button2 onclick="myFunction3()">change backgroun color</button2>
+
+
+
+      <h1 id ="myHeading">This is the title of the page</h1>
+    
+      
+      <h2>This is the subtitle of the page</h2>
+   
+​
+   
+      <hr />
+​
+      <ul id="firstList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+        <li>click me</li>
+      </ul>
+​
+      <ul id="secondList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+​
+      <a id="tapTry" href="strive.school">This link goes to Strive School</a><br>
+      <button onclick="myFunction()">Try it</button>
+      <p id="demo"></p>
+
+
+​   <div id="para">
+     
+    <p>This text is just for the exercise</p>
+     
+   
+​
+    
+      <p>And this text is just for the exercise too!</p>
+   
+    </div>
+
+
+<!-- EXERCISE 1
+            Write a function to change the document title of the page in something else
+           -->
+
+    <script>
+        function changeTitle(newTitle) 
+          {
+           document.title = "New Title";
+          } 
+        changeTitle();
+
+      </script>
+
+
+
+
+
+<!-- EXERCISE 2
+Write a function to change the class of the H1 on a page in "myHeading"
+-->
+<script>
+
+    // function changeTitleClass(){
+
+    document.getElementById("myHeading").className = "h1";
+    document.getElementById("myHeading").className += " MyClass";
+
+</script>
+
+
+
+
+
+
+<!-- EXERCISE 3
+            Write a function to change the text of only the p which are child of a div
+           -->
+
+
+
+
+
+
+  <!-- EXERCISE 4
+     Write a function to change the destination of every link to https://www.google.com
+    -->
+
+ <script>
+     function myFunction() {
+        document.getElementById("tapTry").href = "http://www.google.com/";
+        document.getElementById("demo").innerHTML = "The link above now goes to www.google.com.";
+            }
+ </script>
+
+
+
+
+
+
+
+<!-- EXERCISE 5
+Write a function to add a new item ONLY to the second list
+-->
+​<script>
+function addToTheSecond(content) {
+            var node = document.createElement("LI");
+            var textnode = document.createTextNode("4th");
+            node.appendChild(textnode);
+            document.getElementById("secondList").appendChild(node);
+      }
+      addToTheSecond();
+
+</script>
+
+
+
+
+
+
+
+<!-- EXERCISE 6
+Write a function to add a second paragraph to the div
+ -->
+
+<script>
+
+
+function newP(p){
+
+var para = document.querySelector(div);
+para.innerHTML += "<p>I am new here class</p>";
+}
+
+</script>
+
+
+
+
+
+<!--EXERCISE 7
+Write a function to make the first UL disappear
+-->
+​<script>
+var firstList = document.querySelector("ul");
+firstList.addEventListener('click', function (event){
+                    event.currentTarget.style.display = "none";
+                    
+                })
+
+</script>
+
+
+
+
+<!-- EXERCISE 8
+Write a function to make the background of every UL green
+-->
+​<script>
+
+var button2 = document.querySelector("button2");
+
+button2.addEventListener("click",function(){
+	document.body.style.backgroundColor = "red";
+	document.body.style.backgroundColor = "blue";});
+
+</script>
+
+
+<!-- EXERCISE 9
+Make the heading of the page changing color every time the user clicks on it
+-->
+
+
+<script>
+
+function makeItClickable() {
+    var myColors = ['red', 'purple', 'blue', 'orange'];
+    document.getElementsByTagName('h1')[0].addEventListener('click', function(){
+      for(i = 0; i < myColors.length; i++) {
+        this.style.color = myColors[i];
+      }
+    });
+  }
+
+
+// var heading = document.querySelector("h1");
+//                 heading.addEventListener('click', function (event){
+//                     event.target.style.color = "random"
+//                 })
+
+</script>
+
+
+
+
+
+<!-- EXERCISE 10
+Create a new welcome alert message when the page successfully loads
+ -->
+<script>
+ function myFunction1() {
+  alert("Hello! I am an alert box!");
+}
+</script>
+
+
+
+</script>
+
+...
+
+
+
+
+  </body>
+</html>
