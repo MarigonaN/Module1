@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>BINGO Board</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito&display=swap" />
+      <!--   
+        BINGO CHALLENGE!!!
+        Create programmatically (with JS) a BINGO board with 76 cells, from 1 to 76.
+        Create a button to randomize a number from 1 to 76. The same number should be highlighted on the bingo board
+        EXTRA: 
+        - Take ALWAYS a new number (avoid randoming 10 3 times for example)
+        - Create a USER BOARD with random 24 numbers that highlights as the main board does
+        - Let the user choose HOW MANY user boards he's willing to play with and create them.
+      -->
+     <style>
+      body{
+        background-color: rgb(22, 21, 22);
+        color: pink;
+        font-family: Verdana,  sans-serif;
+        max-width: 768px;
+        margin: 0 auto;
+      }
+     table{
+       width: 100%;
+        margin-bottom: 20px;
+        border: 1px solid white;
+        justify-content: center;
+        border-radius: 10px;
+     }
+     #style{
+      color: pink;
+      font-weight: bolder;
+      text-align: center;
+     }
+     #header{
+       background-color: rgb(156, 13, 120);
+       border-radius:20px;
+     }
+     #btn{
+         color:black;
+         background-color: pink;
+         font-weight: bolder;
+         width: 500px;
+         padding-top: 10px;
+         padding-bottom: 10px;
+     }
+    </style>
+  <head>
+  <body>
+    
+    <center>
+      <div id="container">
+          <div id="header">
+            <h1>BINGO BOARD</h1> 
+          </div>
+          <div id="content">
+              <table border="1" id="lotto">
+                  <tbody id="style">
+                      <tr>
+                          <td class="normal" id="cell00">&nbsp;</td>
+                          <td class="normal" id="cell01">&nbsp;</td>
+                          <td class="normal" id="cell02">&nbsp;</td>
+                          <td class="red" id="cell03">&nbsp;</td>
+                      </tr>
+                      <tr>
+                          <td class="normal" id="cell10">&nbsp;</td>
+                          <td class="normal" id="cell11">&nbsp;</td>
+                          <td class="normal" id="cell12">&nbsp;</td>
+                          <td class="red" id="cell13">&nbsp;</td>
+                      </tr>
+                      <tr>
+                          <td class="normal" id="cell20">&nbsp;</td>
+                          <td class="normal" id="cell21">&nbsp;</td>
+                          <td class="normal" id="cell22">&nbsp;</td>
+                          <td class="red" id="cell23">&nbsp;</td>
+                      </tr>
+                      <tr>
+                          <td class="normal" id="cell30">&nbsp;</td>
+                          <td class="normal" id="cell31">&nbsp;</td>
+                          <td class="normal" id="cell32">&nbsp;</td>
+                          <td class="red" id="cell33">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td class="normal" id="cell40">&nbsp;</td>
+                        <td class="normal" id="cell41">&nbsp;</td>
+                        <td class="normal" id="cell42">&nbsp;</td>
+                        <td class="red" id="cell43">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="normal" id="cell50">&nbsp;</td>
+                        <td class="normal" id="cell51">&nbsp;</td>
+                        <td class="normal" id="cell52">&nbsp;</td>
+                        <td class="red" id="cell53">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="normal" id="cell60">&nbsp;</td>
+                        <td class="normal" id="cell61">&nbsp;</td>
+                        <td class="normal" id="cell62">&nbsp;</td>
+                        <td class="red" id="cell63">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="normal" id="cell70">&nbsp;</td>
+                        <td class="normal" id="cell71">&nbsp;</td>
+                        <td class="normal" id="cell72">&nbsp;</td>
+                        <td class="red" id="cell73">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="normal" id="cell80">&nbsp;</td>
+                        <td class="normal" id="cell81">&nbsp;</td>
+                        <td class="normal" id="cell82">&nbsp;</td>
+                        <td class="red" id="cell83">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="normal" id="cell90">&nbsp;</td>
+                        <td class="normal" id="cell91">&nbsp;</td>
+                        <td class="normal" id="cell92">&nbsp;</td>
+                        <td class="red" id="cell93">&nbsp;</td>
+                    </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+      <input id="btn" type="button" value="Re-generate Numbers" />
+     </center> 
+     <script>
+       var btn = document.getElementById('btn');
+     btn.addEventListener('click', UpdateTable);
+     
+ 
+ // Returns a random number
+  function CreateLottoValues() {
+    return Math.floor(Math.random() * 76 + 1);
+ }
+ //create table
+ function UpdateTable() {
+    // Iterate over each cell and set a random number
+    for (var i = 0; i < 12; i++) {
+        for (var j = 0; j < 4; j++) {
+            tmp = 'cell' + i + j;
+            document.getElementById(tmp).innerHTML = CreateLottoValues();
+        }
+    }
+ }
+ UpdateTable();
+    </script>
+  </body>
+</html>
